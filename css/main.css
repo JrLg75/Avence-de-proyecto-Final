@@ -1,0 +1,990 @@
+@charset "UTF-8";
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes letterFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Header: Mantenemos el estilo visual, pero dejamos que Bootstrap maneje la estructura */
+header {
+  background: rgba(169, 71, 5, 0.9);
+  padding: 1rem 0; /* Quitamos el padding lateral, lo maneja el container */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* Opcional: efecto moderno de desenfoque */
+  /* IMPORTANTE: Eliminamos 'display: flex' y 'justify-content'. 
+     La clase .navbar de Bootstrap ya hace esto. */
+  /* 1. Logo (Ahora .navbar-brand) */
+}
+header .navbar-brand {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #c8a97e;
+  transition: color 0.3s;
+}
+header .navbar-brand:hover {
+  color: rgb(215.2445652174, 192.8369565217, 161.7554347826);
+}
+header {
+  /* 2. Menú (Ahora .navbar-nav en lugar de ul) */
+}
+header .navbar-nav {
+  gap: 2rem; /* Mantenemos tu separación */
+  /* Links (Ahora .nav-link en lugar de li a) */
+}
+header .navbar-nav .nav-link {
+  /* Bootstrap pone gris por defecto, forzamos blanco */
+  color: white !important;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+header .navbar-nav .nav-link:hover {
+  color: #c8a97e !important;
+}
+header {
+  /* 3. Botón Hamburguesa (Ahora .navbar-toggler) */
+}
+header .navbar-toggler {
+  border: none; /* Quitamos borde por defecto */
+  padding: 0;
+  font-size: 1.5rem;
+  /* Quitamos el recuadro azul al hacer click */
+}
+header .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* 4. Estilos RESPONSIVE (Menú móvil) */
+/* Usamos el breakpoint de Bootstrap 'lg' (992px) porque usaste navbar-expand-lg */
+@media (max-width: 991px) {
+  /* Bootstrap se encarga de mostrar/ocultar con JS.
+     Aquí solo estilizamos el contenedor cuando se abre. */
+  header .navbar-collapse {
+    background: rgba(0, 0, 0, 0.95); /* Tu fondo oscuro original */
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    /* Centrar items en móvil */
+    text-align: center;
+  }
+  /* Eliminamos toda la lógica de 'display: none' o '&.active'. 
+     Bootstrap lo hace automáticamente. */
+}
+.hero {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1543353071-873f17a7a088") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  animation: breathe 6s ease-in-out 1;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.hero .hero-text {
+  position: relative;
+  z-index: 1;
+}
+.hero .hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero .hero-text h1 span {
+  display: inline-block;
+  opacity: 0;
+  animation: letterFadeIn 0.5s ease-out forwards;
+}
+.hero .hero-text h1 span:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.hero .hero-text h1 span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.hero .hero-text h1 span:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.hero .hero-text h1 span:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.hero .hero-text h1 span:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.hero .hero-text h1 span:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.hero .hero-text h1 span:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.hero .hero-text h1 span:nth-child(8) {
+  animation-delay: 0.4s;
+}
+.hero .hero-text h1 span:nth-child(9) {
+  animation-delay: 0.45s;
+}
+.hero .hero-text h1 span:nth-child(10) {
+  animation-delay: 0.5s;
+}
+.hero .hero-text h1 span:nth-child(11) {
+  animation-delay: 0.55s;
+}
+.hero .hero-text h1 span:nth-child(12) {
+  animation-delay: 0.6s;
+}
+.hero .hero-text h1 span:nth-child(13) {
+  animation-delay: 0.65s;
+}
+.hero .hero-text h1 span:nth-child(14) {
+  animation-delay: 0.7s;
+}
+.hero .hero-text h1 span:nth-child(15) {
+  animation-delay: 0.75s;
+}
+.hero .hero-text h1 span:nth-child(16) {
+  animation-delay: 0.8s;
+}
+.hero .hero-text h1 span:nth-child(17) {
+  animation-delay: 0.85s;
+}
+.hero .hero-text h1 span:nth-child(18) {
+  animation-delay: 0.9s;
+}
+.hero .hero-text h1 span:nth-child(19) {
+  animation-delay: 0.95s;
+}
+.hero .hero-text h1 span:nth-child(20) {
+  animation-delay: 1s;
+}
+.hero .hero-text h1 span:nth-child(21) {
+  animation-delay: 1.05s;
+}
+.hero .hero-text h1 span:nth-child(22) {
+  animation-delay: 1.1s;
+}
+.hero .hero-text h1 span:nth-child(23) {
+  animation-delay: 1.15s;
+}
+.hero .hero-text h1 span:nth-child(24) {
+  animation-delay: 1.2s;
+}
+.hero .hero-text h1 span:nth-child(25) {
+  animation-delay: 1.25s;
+}
+.hero .hero-text h1 span:nth-child(26) {
+  animation-delay: 1.3s;
+}
+.hero .hero-text h1 span:nth-child(27) {
+  animation-delay: 1.35s;
+}
+.hero .hero-text h1 span:nth-child(28) {
+  animation-delay: 1.4s;
+}
+.hero .hero-text h1 span:nth-child(29) {
+  animation-delay: 1.45s;
+}
+.hero .hero-text h1 span:nth-child(30) {
+  animation-delay: 1.5s;
+}
+.hero .hero-text h1 span:nth-child(31) {
+  animation-delay: 1.55s;
+}
+.hero .hero-text h1 span:nth-child(32) {
+  animation-delay: 1.6s;
+}
+.hero .hero-text h1 span:nth-child(33) {
+  animation-delay: 1.65s;
+}
+.hero .hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.hero .hero-text .btn {
+  padding: 0.8rem 1.5rem;
+  background: #c8a97e;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.hero .hero-text .btn:hover {
+  background: #e1b96f;
+}
+
+.menu-section {
+  padding: 4rem 5%; /* Quitamos padding lateral, Bootstrap .container se encarga */
+  text-align: center;
+}
+.menu-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 3rem; /* Un poco más de aire */
+}
+.menu-section {
+  /* ELIMINADO: .menu-grid (Bootstrap usa .row) */
+  /* Estilos para la tarjeta */
+}
+.menu-section .menu-card {
+  /* Fondo y bordes */
+  background: white;
+  border-radius: 12px; /* Bootstrap tiene border-radius, pero este es más pronunciado */
+  overflow: hidden;
+  /* Sombras y transición */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  /* Aseguramos que no haya borde gris feo (aunque pusimos border-0 en HTML) */
+  border: none;
+  /* Imágenes */
+}
+.menu-section .menu-card .card-img-top {
+  width: 100%;
+  height: 200px; /* IMPORTANTE: Mantiene todas las fotos del mismo alto */
+  object-fit: cover; /* Recorta la foto para que no se deforme */
+}
+.menu-section .menu-card {
+  /* Cuerpo de la tarjeta */
+}
+.menu-section .menu-card .card-body {
+  padding: 1.5rem; /* Ajuste de espaciado interno */
+}
+.menu-section .menu-card .card-body h3 {
+  font-family: "Playfair Display", serif;
+  margin: 0.5rem 0 1rem;
+  font-size: 1.5rem;
+  color: #2c2c2c;
+}
+.menu-section .menu-card .card-body p {
+  color: #666;
+  margin-bottom: 0;
+}
+.menu-section .menu-card {
+  /* Efecto Hover */
+}
+.menu-section .menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra un poco más fuerte al flotar */
+}
+
+.about {
+  padding: 6rem 8%;
+  background: linear-gradient(to bottom, #fff, #fafafa);
+  /* --- COLUMNA DE TEXTO --- */
+}
+.about .about-text {
+  /* Quitamos anchos y flex de estructura, dejamos solo flex vertical para gap */
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.about .about-text .section-subtitle {
+  font-size: 1.1rem;
+  color: #c8a97e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.about .about-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1.2;
+  background: linear-gradient(45deg, #2c2c2c, #4a4a4a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about .about-text .about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 1rem;
+}
+.about .about-text {
+  /* --- TARJETAS MISION / VISION --- */
+  /* Eliminado el contenedor .mision-vision (grid) porque ahora es un .row */
+}
+.about .about-text .mision, .about .about-text .vision {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%; /* Importante para que las columnas de Bootstrap se vean iguales */
+}
+.about .about-text .mision:hover, .about .about-text .vision:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.12);
+}
+.about .about-text .mision .title-with-icon, .about .about-text .vision .title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.about .about-text .mision .title-with-icon h3, .about .about-text .vision .title-with-icon h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #2c2c2c;
+  margin: 0;
+}
+.about .about-text .mision .title-with-icon .icon, .about .about-text .vision .title-with-icon .icon {
+  font-size: 2.5rem;
+  color: #c8a97e;
+  margin-top: 2px;
+}
+.about .about-text .mision .title-with-icon .icon i, .about .about-text .vision .title-with-icon .icon i {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  background: rgba(200, 169, 126, 0.1);
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 1.4rem;
+}
+.about .about-text .mision .title-with-icon .icon:hover i, .about .about-text .vision .title-with-icon .icon:hover i {
+  transform: rotateY(180deg);
+  background: #c8a97e;
+  color: white;
+}
+.about .about-text .mision p, .about .about-text .vision p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+.about .about-text .mision::before, .about .about-text .vision::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #c8a97e;
+  border-radius: 4px 0 0 4px;
+}
+.about .about-text {
+  /* --- FEATURES --- */
+  /* Eliminado .about-features (grid) porque ahora es un .row */
+}
+.about .about-text .feature {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 100%; /* Para igualar alturas en la fila */
+}
+.about .about-text .feature:hover {
+  transform: translateY(-3px);
+}
+.about .about-text .feature .feature-icon {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: #c8a97e;
+}
+.about .about-text .feature .feature-icon i {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background: rgba(200, 169, 126, 0.1);
+  border-radius: 12px;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.about .about-text .feature .feature-icon:hover i {
+  background: #c8a97e;
+  color: white;
+  transform: translateY(-5px);
+}
+.about .about-text .feature h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #2c2c2c;
+}
+.about .about-text .feature p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0; /* Bootstrap añade margin a p, a veces es mejor quitarlo aquí */
+}
+.about {
+  /* --- COLUMNA DE IMAGEN --- */
+}
+.about .about-img {
+  /* Quitamos flex y min-width, Bootstrap maneja el tamaño */
+  position: relative; /* Necesario para que el badge se posicione absoluto respecto a esto */
+}
+.about .about-img img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  object-fit: cover; /* Buena práctica con imágenes responsive */
+}
+.about .about-img img:hover {
+  transform: scale(1.02);
+}
+.about .about-img .experience-badge {
+  position: absolute;
+  bottom: -20px; /* Ajustado ligeramente */
+  right: -20px; /* Ajustado para que no se salga tanto */
+  background: #c8a97e;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex; /* Mantenemos flex interno para centrar texto */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+.about .about-img .experience-badge .years {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+.about .about-img .experience-badge .text {
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.reservas {
+  background: #fafafa;
+  padding: 4rem 8%;
+  text-align: center;
+}
+.reservas h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.reservas form {
+  max-width: 500px;
+  margin: auto;
+  gap: 1rem;
+}
+.reservas form input, .reservas form button {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.reservas form button {
+  padding: 0.8rem 1.5rem;
+  background: #c8a97e;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.reservas form button:hover {
+  background: #e1b96f;
+}
+.reservas form button {
+  border: none;
+}
+
+.sedes {
+  padding: 4rem 0;
+  background: #fafafa;
+}
+.sedes .section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.sedes .section-title h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #c8a97e;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0 2rem;
+}
+.sedes .section-title .title-decoration {
+  width: 120px;
+  height: 2px;
+  background: #c8a97e;
+  margin: 0 auto;
+  position: relative;
+}
+.sedes .section-title .title-decoration::before, .sedes .section-title .title-decoration::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  background: #c8a97e;
+  top: -6px;
+}
+.sedes .section-title .title-decoration::before {
+  left: 15px;
+}
+.sedes .section-title .title-decoration::after {
+  right: 15px;
+}
+.sedes .sede-banner {
+  position: relative;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+.sedes .sede-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.3) 100%);
+}
+.sedes .sede-banner .sede-titulo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+.sedes .sede-banner .sede-titulo h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+.sedes .sede-banner .sede-info {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+}
+.sedes .sede-banner .sede-info .sede-detalles .sede-botones {
+  display: inline-flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+@supports (backdrop-filter: blur(8px)) {
+  .sedes .sede-banner .sede-info .sede-detalles .sede-botones {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+  }
+}
+.sedes .sede-banner .sede-info .sede-detalles .btn-sede {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: rgba(200, 169, 126, 0.95);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 160px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.sedes .sede-banner .sede-info .sede-detalles .btn-sede:hover {
+  background-color: #c8a97e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.sedes .sede-banner .sede-info .sede-detalles .btn-sede.btn-mapa {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.sedes .sede-banner .sede-info .sede-detalles .btn-sede.btn-mapa:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.delivery-cta {
+  /* Fondo oscuro y degradado */
+  background: linear-gradient(135deg, rgba(200, 169, 126, 0.95), rgba(225, 185, 111, 0.95)), url("../assets/img/pattern.png"); /* Verifica que esta ruta de imagen sea correcta */
+  background-size: cover;
+  /* IMPORTANTE: Forzamos color blanco base para toda la sección */
+  color: rgba(255, 255, 255, 0.8);
+  padding: 4rem 0;
+  /* --- Encabezado Principal --- */
+}
+.delivery-cta .delivery-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.delivery-cta .delivery-header i {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.delivery-cta .delivery-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+.delivery-cta .delivery-header h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+}
+.delivery-cta {
+  /* --- Texto Principal (Descripción) --- */
+}
+.delivery-cta .delivery-description .delivery-main-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 auto 2rem; /* Margen inferior para separar de las columnas */
+  max-width: 800px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.delivery-cta {
+  /* --- Cajas de Horario y Zonas (Centradas) --- */
+}
+.delivery-cta .delivery-horario,
+.delivery-cta .delivery-zonas {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los bloques verticalmente en columna */
+  text-align: center; /* Centra el texto */
+  /* Títulos internos */
+}
+.delivery-cta .delivery-horario .info-header,
+.delivery-cta .delivery-zonas .info-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* <--- ESTO CENTRA EL ICONO Y EL H3 */
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.delivery-cta .delivery-horario .info-header i,
+.delivery-cta .delivery-zonas .info-header i {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.delivery-cta .delivery-horario .info-header h3,
+.delivery-cta .delivery-zonas .info-header h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+.delivery-cta .delivery-horario,
+.delivery-cta .delivery-zonas {
+  /* Párrafos dentro de las cajas */
+}
+.delivery-cta .delivery-horario p,
+.delivery-cta .delivery-zonas p {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* <--- ESTO CENTRA EL CONTENIDO DEL PÁRRAFO */
+  gap: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+}
+.delivery-cta .delivery-horario p i,
+.delivery-cta .delivery-zonas p i {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+.delivery-cta .delivery-horario,
+.delivery-cta .delivery-zonas {
+  /* Lista de Contactos (ul) */
+}
+.delivery-cta .delivery-horario .delivery-contacts,
+.delivery-cta .delivery-zonas .delivery-contacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.delivery-cta .delivery-horario .delivery-contacts li,
+.delivery-cta .delivery-zonas .delivery-contacts li {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* <--- ESTO CENTRA LOS ITEMS DE LA LISTA */
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  flex-wrap: wrap; /* Por si el número es muy largo en móviles */
+}
+.delivery-cta .delivery-horario .delivery-contacts li > i,
+.delivery-cta .delivery-zonas .delivery-contacts li > i {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+.delivery-cta .delivery-horario .delivery-contacts li a,
+.delivery-cta .delivery-zonas .delivery-contacts li a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.delivery-cta .delivery-horario .delivery-contacts li a:hover,
+.delivery-cta .delivery-zonas .delivery-contacts li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.delivery-cta {
+  /* --- Lista de Contactos (Teléfonos) --- */
+}
+.delivery-cta .delivery-contacts {
+  list-style: none; /* Quitamos los puntos de lista por defecto */
+  padding: 0;
+  margin: 0;
+}
+.delivery-cta .delivery-contacts li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  /* Icono de ubicación */
+}
+.delivery-cta .delivery-contacts li > i {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  width: 20px;
+}
+.delivery-cta .delivery-contacts li {
+  /* Enlaces de teléfono */
+}
+.delivery-cta .delivery-contacts li a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.delivery-cta .delivery-contacts li a i {
+  font-size: 0.9em;
+}
+.delivery-cta .delivery-contacts li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .sedes .sede-banner {
+    height: 450px;
+  }
+  .sedes .sede-banner .sede-info .sede-detalles .sede-botones {
+    flex-direction: column;
+    width: 90%;
+  }
+  .sedes .sede-banner .sede-info .sede-detalles .sede-botones .btn-sede {
+    width: 100%;
+  }
+}
+footer {
+  background: #111111;
+  padding: 4rem 0 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  /* ELIMINAMOS: .footer-content (grid layout).
+     Ahora el HTML usa .container > .row */
+}
+footer .footer-section {
+  /* Mantenemos el estilo de tus títulos */
+}
+footer .footer-section h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #c8a97e;
+}
+footer .footer-section {
+  /* Mantenemos la alineación de tus items de contacto */
+}
+footer .footer-section p {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  /* En móvil Bootstrap alineará a la izquierda, si quieres centrar en móvil ver media query abajo */
+}
+footer .footer-section p i {
+  color: #c8a97e;
+  width: 20px;
+  text-align: center;
+  /* Aseguramos que el icono no se encoja si el texto es largo */
+  flex-shrink: 0;
+}
+footer {
+  /* Tus botones de redes sociales (sin cambios estructurales, funcionan perfecto) */
+}
+footer .social-links {
+  display: flex;
+  gap: 1rem;
+}
+footer .social-links a {
+  background: rgba(200, 169, 126, 0.1);
+  color: #c8a97e;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex; /* Flex interno para centrar el icono */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Bootstrap añade subrayado a veces, lo quitamos */
+  transition: all 0.3s ease;
+}
+footer .social-links a:hover {
+  background: #c8a97e;
+  color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-3px);
+}
+footer .footer-bottom {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+footer .footer-bottom p {
+  margin: 0; /* Bootstrap añade margen inferior a p */
+}
+
+/* Responsive Styles para Footer */
+/* Bootstrap maneja el apilamiento de columnas, aquí solo ajustamos alineación de texto */
+@media (max-width: 768px) {
+  footer {
+    /* Forzamos alineación central en móviles para coincidir con tu diseño original */
+    text-align: center;
+  }
+  footer .footer-section {
+    margin-bottom: 2rem; /* Espacio extra entre columnas apiladas */
+  }
+  footer .footer-section p {
+    justify-content: center; /* Centrar items de contacto */
+  }
+  footer .social-links {
+    justify-content: center; /* Centrar redes sociales */
+  }
+}
+@media (max-width: 1024px) {
+  .about {
+    padding: 4rem 2rem;
+  }
+  .about .about-text h2 {
+    font-size: 2.5rem;
+  }
+  .about .about-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1.5rem;
+  }
+  .about .about-text h2 {
+    font-size: 1.6rem;
+  }
+  .about .mision-vision {
+    grid-template-columns: 1fr;
+  }
+  .about .about-features {
+    grid-template-columns: 1fr;
+  }
+  .about .experience-badge {
+    width: 100px;
+    height: 100px;
+    bottom: -10px;
+    right: -10px;
+  }
+  .about .experience-badge .years {
+    font-size: 1.6rem;
+  }
+  .about .experience-badge .text {
+    font-size: 0.9rem;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/*# sourceMappingURL=main.css.map */

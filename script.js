@@ -1,11 +1,5 @@
-// Menú hamburguesa
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.querySelector("header ul");
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+document.addEventListener("DOMContentLoaded", () => {
 
   // Reservas (demo)
   const form = document.getElementById("formReserva");
