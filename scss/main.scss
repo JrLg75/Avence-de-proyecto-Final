@@ -1,8 +1,16 @@
-// Importar variables y mixins primero
-@import "variables";
-@import "mixins";
+// Importar todos los módulos al principio
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'header';
+@use 'hero';
+@use 'menu';
+@use 'about';
+@use 'reservas';
+@use 'contacto';
+@use 'footer';
+@use 'responsive';
 
-// Reset global
+// Estilos globales
 * {
   margin: 0;
   padding: 0;
@@ -14,13 +22,11 @@ body {
   background: $color-bg;
   color: $color-text;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-// Importar componentes
-@import "header";
-@import "hero";
-@import "menu";
-@import "about";
-@import "reservas";
-@import "contacto";
-@import "footer";
+main {
+  flex-grow: 1;
+}

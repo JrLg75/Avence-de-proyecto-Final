@@ -1,60 +1,60 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* Header*/
 header {
   background: rgba(169, 71, 5, 0.9);
-  padding: 1rem 5%;
-  @include flex-center;
-  justify-content: space-between;
+  padding: $spacing-base 0; 
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  .logo {
+  backdrop-filter: blur(5px); 
+  
+  .navbar-brand {
     font-family: $font-title;
     font-size: 1.8rem;
     color: $color-primary;
+    transition: color 0.3s;
+
+    &:hover {
+      color: lighten($color-primary, 10%);
+    }
   }
 
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+  .navbar-nav {
+    gap: 2rem; 
 
-    li a {
-      text-decoration: none;
-      color: white;
+
+    .nav-link {
+      color: white !important; 
       font-weight: bold;
       transition: color 0.3s;
-
+      
       &:hover {
-        color: $color-primary;
+        color: $color-primary !important;
       }
     }
   }
 
-  .menu-toggle {
-    display: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
+  .navbar-toggler {
+    border: none; 
+    padding: 0;
+    font-size: 1.5rem;
+    
+    &:focus {
+      box-shadow: none;
+    }
   }
 }
 
-@media (max-width: 768px) {
-  header ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 5%;
-    background: rgba(0,0,0,0.95);
+/* 4. Estilos RESPONSIVE (Menú móvil) */
+@media (max-width: 991px) {
+  
+  header .navbar-collapse {
+    background: rgba(0,0,0,0.95); 
     padding: 1rem;
+    margin-top: 1rem;
     border-radius: 8px;
-
-    &.active {
-      display: flex;
-    }
-  }
-
-  .menu-toggle {
-    display: block;
+    text-align: center; 
   }
 }
